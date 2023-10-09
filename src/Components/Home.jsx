@@ -35,11 +35,86 @@ import {
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-
-
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 export const Home = () => {
+  const waterInfraSmarter = [
+    { img: Image1, title: 'Online Monitoring', description: 'Monitor your entire water network, just using your smartphone', link: '' },
+    { img: Image2, title: 'Advanced Automation', description: 'Efficient distribution of water resource with reduced operational cost', link: '' },
+    { img: Image3, title: 'Leakage Detection', description: 'We protect your infrastructure while reducing your water and energy bills', link: '' },
+    { img: Midimages1, title: 'Quality Management', description: 'Keep an eye on your health, subscribe to our water quality alerts', link: '' }
+  ];
+
+
+  const customerStoriesSlider = [
+    {
+      img: cardimage, description: `Ashirwad by Ali Axis R&T Centre is associated with Agua
+    Wireless for quite some now and we are working together on
+    some cutting-edge technology projects. Rohit and Kanish
+    are really great and thorough professionals. We look
+    forward to working with Agua on more projects creating
+    meaningful solutions for our customers.`, customerName: 'Lokesh pancholi', customerDesignation: 'Design manager'
+    },
+    {
+      img: cardimage1, description: `We deployed Agua's flow sensor in a residential apartment
+    three years back. They have helped us with accurate
+    billing of every house. These systems have not caused any
+    malfunction till date.`, customerName: 'Dharma Krishnappa', customerDesignation: 'Director'
+    },
+  ];
+  const bookDemoSlider = [
+    'https://static.wixstatic.com/media/dc1522_ba7cfbe0edf34fe9adc25bb1c56a29de~mv2.png/v1/fill/w_1039,h_287,al_c,lg_1,q_85,enc_auto/dc1522_ba7cfbe0edf34fe9adc25bb1c56a29de~mv2.png',
+    'https://static.wixstatic.com/media/dc1522_649cae8446624806b7a7a1155eaf3311~mv2.png/v1/fill/w_1039,h_287,al_c,lg_1,q_85,enc_auto/dc1522_649cae8446624806b7a7a1155eaf3311~mv2.png',
+    'https://static.wixstatic.com/media/dc1522_a8f2b375cbff4405b82a3ae72231e296~mv2.png/v1/fill/w_1039,h_287,al_c,lg_1,q_85,enc_auto/dc1522_a8f2b375cbff4405b82a3ae72231e296~mv2.png',
+    'https://static.wixstatic.com/media/dc1522_77acc46c588e4dc4944bbc690c527a15~mv2.png/v1/fill/w_1039,h_287,al_c,lg_1,q_85,enc_auto/dc1522_77acc46c588e4dc4944bbc690c527a15~mv2.png',
+    'https://static.wixstatic.com/media/dc1522_f1437bd23d914bf0876596e33a5d0f76~mv2.png/v1/fill/w_1039,h_287,al_c,lg_1,q_85,enc_auto/dc1522_f1437bd23d914bf0876596e33a5d0f76~mv2.png'
+  ];
+
+
+  const partnersSlider = [Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9];
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    lazyLoad: true,
+    slidesToScroll: 1,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 2000,
+  };
+
+  const settingsCustomerStories = {
+    dots: true,
+    dotsClass: 'slick-dots',
+    infinite: true,
+    speed: 500,
+    lazyLoad: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 2000,
+    arrows: false, // Hide the previous slide control
+  };
+
+  const settings2 = {
+    dots: false,
+    arrows: false,
+    pauseOnHover: false,
+    infinite: true,
+    slidesToShow: 7,
+    autoplay: true,
+    speed: 2500,
+    autoplaySpeed: 2500,
+    cssEase: "linear",
+  };
+
   return (
     <>
       <Container fluid className="bg-black pb-4 pt-3 ">
@@ -47,13 +122,13 @@ export const Home = () => {
           <Row>
             <Col lg={5} md={6} xs={12} className="pb-3">
               <h1 className="text-white">
-               <b  style={{ fontWeight:'900',fontSize:'40px'}}>“Let’s make your</b> 
-                <b style={{ color: "#87CEEB",fontWeight:'900',fontSize:'40px' }}> water visible</b> <b style={{fontWeight:'900',fontSize:'40px'}}>  and </b>
-                <b style={{ color: "#90EE90",fontWeight:'900',fontSize:'40px' }}> Cost invisible”</b>
+                <b style={{ fontWeight: '900', fontSize: '40px' }}>“Let’s make your</b>
+                <b style={{ color: "#87CEEB", fontWeight: '900', fontSize: '40px' }}> water visible</b> <b style={{ fontWeight: '900', fontSize: '40px' }}>  and </b>
+                <b style={{ color: "#90EE90", fontWeight: '900', fontSize: '40px' }}> Cost invisible”</b>
               </h1>
               <p className="text-white" style={{ fontSize: "small" }}>
                 <b>
-              
+
                   Imagine a Smart device that gives you insights about your
                   entire water network, increases the lifespan of your water
                   infrastructure, and saves you money on water. Whether you are
@@ -69,249 +144,107 @@ export const Home = () => {
               </Button>
             </Col>
             <Col lg={7} md={6} xs={12}>
-            
+
               <div>
-            <video width="100%" height="100%" controls    >
-                <source src="https://video.wixstatic.com/video/dc1522_8a73b32e7e7f4072a0efe5d5a2afece3/480p/mp4/file.mp4" type="video/mp4" className="videos"  />
-            </video>
-        </div>
-                
-              
+                <video width="100%" height="100%" controls    >
+                  <source src="https://video.wixstatic.com/video/dc1522_8a73b32e7e7f4072a0efe5d5a2afece3/480p/mp4/file.mp4" type="video/mp4" className="videos" />
+                </video>
+              </div>
+
+
             </Col>
           </Row>
-          </Container>
-        </Container>
-     
-     
-
-      <Container fluid   style={{backgroundColor: "#F4FCFF"}} >
-        <Container>
-           <Carousel
-            autoPlay={true}
-            infiniteLoop={true}
-            interval={2000}
-            showThumbs={false}
-            showIndicators={false}
-            showStatus={false}
-            showArrows={false}
-            transitionTime={1000} 
-            transitionEffect="fade"
-            animation= "fade 1.5s ease-in-out"
-       
-         >
-            <div>
-              <img src={Pic1} style={{ width: "150px" }} />
-            </div>
-            <div>
-              <img src={Pic2} style={{ width: "150px" }} />
-            </div>
-            <div>
-              <img src={Pic3} style={{ width: "150px" }} />
-            </div>
-            <div>
-              <img src={Pic5} style={{ width: "150px" }} />
-            </div>
-            <div>
-              <img src={Pic6} style={{ width: "150px" }} />
-            </div>
-            <div>
-              <img src={Pic4} style={{ width: "150px" }} />
-            </div>
-            <div>
-              <img src={Pic7} style={{ width: "150px" }} />
-            </div>
-            <div>
-              <img src={Pic8} style={{ width: "150px" }} />
-            </div>
-            <div>
-              <img src={Pic9} style={{ width: "150px" }} />
-            </div>  
-          </Carousel> 
-         
-          
-        
-          
         </Container>
       </Container>
-      <Container fluid className=" pt-5 pb-5"> 
+
+
+
+      <div className="container-fluid">
+        <Slider {...settings2}>
+          {partnersSlider.map((item, key) =>
+            <div key={key} className="d-flex justify-content-center">
+              <img src={item} style={{ width: "150px", objectFit: 'contain', height: '150px' }} />
+            </div>
+          )}
+        </Slider>
+      </div>
+
+      <Container fluid className=" pt-5 pb-5">
         <Container>
           <div >
             <h1 className=" text-center pb-4">
               <b>Connecting the Physical and Digital worlds </b>
             </h1>
           </div>
-          <Row>
-            <Col lg={5} md={6} xs={10}>
+          <Row className="justify-content-center text-center align-items-center equal-height">
+            <Col md={6} xs={10}>
               <img
                 src={Midimages1}
-                style={{ maxWidth: "400px", height: "350px" }} 
-                className="image1"
+                className="img-responsive section3"
+                style={{ maxWidth: "100%" }}
               />
             </Col>
 
-            <Col lg={7} md={6} xs={10} >
+            <Col md={6} xs={10} >
               <img
-                src={Midimages} className="image1"
-                style={{width:'570px', height: "350px" }}
+                src={Midimages}
+                className="img-responsive section3"
+
+                style={{ maxWidth: "100%" }}
               />
             </Col>
           </Row>
         </Container>
       </Container>
+
+
       <Container fluid style={{ backgroundColor: "#F4FCFF" }} className="pt-5 my-3" >
         <Container >
-  
-            <h1  style={{fontWeight:'900' }}  className="text-black text-center  ">
-             Make Your Water Infra Smarter
-            </h1>
-  
+          <h1 style={{ fontWeight: '900' }} className="text-black text-center  ">
+            Make Your Water Infra Smarter
+          </h1>
 
           {/* Cards Section  */}
-          <Row
-            className="text-black pb-5 pt-4 align-items-center"
-           
-          >
-            <Col lg={3} md={3} xs={6} className="my-3  ">
-              <Card
-                style={{ border: "3px", maxWidth: "190px", height: "430px" }}
-                className="card-hover">
-                <Card.Img
-                  variant="top"
-                  src={Image1}
-                  className="img-fluid "
-                  style={{ width: "160px", height: "180px"}}
-                  
-              
-                />
-                <Card.Body>
-                  <Card.Title>
-                    <b className="fs-6">Online Monitoring</b>
-                  </Card.Title>
-                  <Card.Text className="my-3">
-                    Monitor your entire water network, just using your
-                    smartphone
-                  </Card.Text>
-                  <Button
-                    variant="primary"
-                    style={{ position: "absolute", bottom: "0px" }}
-                    className="mb-2 mt-2"
-                  >
-                    Learn More
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col lg={3} md={3} xs={6} className="my-3  ">
-              <Card
-                style={{ border: "3px", maxWidth: "190px", height: "430px" }}
-                className="card-hover"
-              >
-                <Card.Img
-                  variant="top"
-                  src={Image2}
-                  className="img-fluid"
-                  style={{ width: "160px", height: "180px" }}
-                />
-                <Card.Body>
-                  <Card.Title>
-                    <b className="fs-6">Advanced Automation</b>
-                  </Card.Title>
-                  <Card.Text className="my-3">
-                    Efficient distribution of water resource with reduced
-                    operational cost
-                  </Card.Text>
-                  <Button
-                    variant="primary"
-                    style={{ position: "absolute", bottom: "0px" }}
-                    className="mb-2 mt-2"
-                  >
-                    Learn More
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col lg={3} md={3} xs={6} className="my-3  ">
-              <Card
-                style={{ border: "3px", maxWidth: "190px", height: "430px" }}
-                className="card-hover"
-              >
-                <Card.Img
-                  variant="top"
-                  src={Image3}
-                  style={{ width: "160px", height: "180px" }}
-                  className="img-fluid"
-                />
-                <Card.Body>
-                  <Card.Title>
-                    <b className="fs-6">Leakage Detection</b>
-                  </Card.Title>
-                  <Card.Text className="my-3">
-                    We protect your infrastructure while reducing your water and
-                    energy bills
-                  </Card.Text>
-                  <Button
-                    variant="primary"
-                    style={{ position: "absolute", bottom: "0px" }}
-                    className="mb-2 mt-2"
-                  >
-                    Learn More
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col lg={3} md={3} xs={6} className="my-3  ">
-              <Card
-                style={{ border: "3px", maxWidth: "190px", height: "430px" }}
-                className="card-hover"
-              >
-                <Card.Img
-                  variant="top"
-                  src={Midimages1}
-                  style={{ width: "160px", height: "180px" }}
-                />
-                <Card.Body>
-                  <Card.Title>
-                    <b className="fs-6">Quality Management</b>
-                  </Card.Title>
-                  <Card.Text className="my-3">
-                    Keep an eye on your health, subscribe to our water quality
-                    alerts
-                  </Card.Text>
-                  <Button
-                    variant="primary"
-                    style={{ position: "absolute", bottom: "0px" }}
-                    className="mb-2 mt-2 "
-                  >
-                    Learn More
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
+          <Row className="text-black pb-5 pt-4 align-items-center gy-3">
+            {waterInfraSmarter.map((item, index) =>
+              <Col md={3} xs={12} key={index}>
+                <Card className="border-0 slider">
+                  <Card.Img src={item.img} className="card-img-top smarterImg" />
+                  <Card.Body>
+                    <Card.Title>{item.title}</Card.Title>
+                    <Card.Text>
+                      {item.description}
+                    </Card.Text>
+                    <Button variant="primary">Learn More</Button>
+                  </Card.Body>
+                </Card>
+              </Col>
+            )}
           </Row>
         </Container>
       </Container>
 
-      <Container fluid className="bg-black pt-5 pb-5"style={{fontWeight:'800'}}>
+      <Container fluid className="bg-black pt-5 pb-5" style={{ fontWeight: '800' }}>
         <Container>
-          <h1 className="text-center text-white pt-3 pb-3" style={{fontWeight:'700',fontSize:'40px'}}>
+          <h1 className="text-center text-white pt-3 pb-3" style={{ fontWeight: '700', fontSize: '40px' }}>
             Impact that we created
           </h1>
           <Row>
             <Col lg={4} md={4} xs={12} className="text-white text-center">
-              <h2 style={{fontWeight:'800',fontSize:'50px'}}> 35%</h2>
-              <p style={{fontWeight:'800',fontSize:'18px'}}>Water and electricity saved</p>
+              <h2 style={{ fontWeight: '800', fontSize: '50px' }}> 35%</h2>
+              <p style={{ fontWeight: '800', fontSize: '18px' }}>Water and electricity saved</p>
             </Col>
             <Col lg={4} md={4} xs={12} className="text-white text-center">
-              <h2 style={{fontWeight:'800',fontSize:'50px'}}>
-                3100000 <span style={{ fontSize: "15px",fontWeight:'800' }}> Litres</span>
+              <h2 style={{ fontWeight: '800', fontSize: '50px' }}>
+                3100000 <span style={{ fontSize: "15px", fontWeight: '800' }}> Litres</span>
               </h2>
-              <p style={{fontWeight:'800',fontSize:'18px'}}>Water saved</p>
+              <p style={{ fontWeight: '800', fontSize: '18px' }}>Water saved</p>
             </Col>
-            <Col lg={4} md={4} xs={12} className="text-white text-center"style={{fontWeight:'800'}}>
-              <h2 style={{fontWeight:'800',fontSize:'50px'}}>
+            <Col lg={4} md={4} xs={12} className="text-white text-center" style={{ fontWeight: '800' }}>
+              <h2 style={{ fontWeight: '800', fontSize: '50px' }}>
                 1023840 <span style={{ fontSize: "15px" }}>Kg</span>
               </h2>
-              <p style={{fontWeight:'800',fontSize:'18px'}}>Carbon emission avoided</p>
+              <p style={{ fontWeight: '800', fontSize: '18px' }}>Carbon emission avoided</p>
             </Col>
           </Row>
         </Container>
@@ -320,7 +253,7 @@ export const Home = () => {
       <Container fluid className="my-4">
         <Container>
           <div className=" text-center pt-3" style={{ color: "#000000" }}>
-            <h3 style={{fontWeight:'700',fontSize:'40px'}}>
+            <h3 style={{ fontWeight: '700', fontSize: '40px' }}>
               Our customer stories
             </h3>
             <p style={{ fontSize: "small" }}>
@@ -329,361 +262,125 @@ export const Home = () => {
           </div>
         </Container>
       </Container>
-    <Container fluid className="pt-5 pb-5">
-        <Row className="justify-content-center align-items-center">
-          <Col lg={8} md={11} xs={11} className="  ">
-          <Card 
-           style={{width:'100%', height: "100%" }}
-           className="shadow-lg  pt-5 border-5  rounded-1  cards ">
-            <Carousel
-              autoPlay={true}
-              infiniteLoop={true}
-              interval={3000}
-              showIndicators={false}
-              showStatus={false}
-              showArrows={false}
-              transitionTime={1000}
-              transitionEffect='fade'
-              animation="fade 1.5s ease-in-out"
->
-            
-              <div >
-                <Row>
-                  <Col lg={3} md={2} xs={2}>
-                    <a href="">
-                      <img
-                        src={cardimage}
-                        className=""
-                        style={{ width: "100px" }}
-                      />
-                    </a>
-                  </Col>
-                  <Col lg={8} md={8} xs={12} className=" ">
-                    <p style={{ fontsize: "12px" }}>
-                      Ashirwad by Ali Axis R&T Centre is associated with Agua
-                      Wireless for quite some now and we are working together on
-                      some cutting-edge technology projects. Rohit and Kanish
-                      are really great and thorough professionals. We look
-                      forward to working with Agua on more projects creating
-                      meaningful solutions for our customers.
-                    </p>
-                    <span className="d-flex justify-content-end  pb-3">
-                      <b>
-                        Lokesh pancholi <br className="ms-auto  " /> Design
-                        manager
-                      </b>
-                    </span>
-                  </Col>
-                </Row>
-              </div>
-              <div>
-                <Row>
-                  <Col lg={3} md={2} xs={2}>
-                    <a href="">
-                      <img
-                        src={cardimage1}
-                        className=""
-                        style={{ width: "100px" }}
-                      />
-                    </a>
-                  </Col>
-                  <Col lg={8} md={8} xs={12} className=" ">
-                    <p style={{ fontsize: "12px" }}>
-                      We deployed Agua's flow sensor in a residential apartment
-                      three years back. They have helped us with accurate
-                      billing of every house. These systems have not caused any
-                      malfunction till date.
-                    </p>
-                    <span className="d-flex justify-content-end ">
-                      <b>
-                        Dharma Krishnappa
-                        <br /> Director
-                      </b>
-                    </span>
-                  </Col>
-                </Row>
-              </div>
-              <div>
-                <Col lg={8} md={8} xs={12} className="">
-                  <p style={{ fontsize: "12px" }} className="ms-5 ">
-                    The water machine alarm system is working absolutely fine
-                    and it's really working well. It was installed in 2019 and
-                    since then we have not faced any issues in terms of
-                    functionality.
-                  </p>
-                  <span className="d-flex justify-content-end">
-                    <b>
-                      Mayank <br /> Manager <br /> Drugvilla Pharmacy
-                    </b>
-                  </span>
-                </Col>
-              </div>
-            
-            </Carousel>
+      <Container className="py-5">
+        <div className="row justify-content-center">
+          <div className="col-md-8 col-12">
+            <Card className="shadow py-3">
+              <Card.Body>
+                <Slider {...settingsCustomerStories}>
+                  {customerStoriesSlider.map((item, key) =>
+                    <div key={key}>
+                      <div className="row align-items-center justify-content-center " >
+                        <div className="col-4 " >
+                          <img src={item.img} className="d-block mx-auto" style={{ width: "100px", objectFit: 'contain', height: '100px' }} />
+                        </div>
+                        <div className="col-8 px-2" >
+                          <h6 >{item.description}</h6>
+                          <div className="d-flex justify-content-end ">
+                            <h6 className="fw-bold">{item.customerName} <br /> {item.customerDesignation} </h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </Slider>
+              </Card.Body>
             </Card>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+
+      </Container >
       <Container fluid className="bg-black text-white pt-5">
         <Container>
-          <h1 className="text-center pt-4"style={{fontWeight:'700'}}>Technology Integrations</h1>
+          <h1 className="text-center pt-4" style={{ fontWeight: '700' }}>Technology Integrations</h1>
+          <Row className="align-items-center">
+            <Col lg={6} md={8} xs={12}              >
+              <p>
+                AGUA ONE, our IoT gateway is enabling sustainable water
+                management across the water value chain. This state-of-the-art
+                solution offers numerous benefits to our customers. Key features
+                which make our gateway stand out:
+              </p>
+              <ul className="d-grid gap-3">
+                <li>Seamless communication over advanced wireless protocols, like
+                  LoRa, 4G, GSM, WiFi and Bluetooth.</li>
+                <li>Power options like AC power, solar power and battery backup,
+                  ensure uninterrupted operation.</li>
+                <li>24/7 monitoring, Geotagging, Alert system and accurate data
+                  analytics, help you make data-driven decisions</li>
+              </ul>
 
-          <Row>
-           
-            <Col
-              lg={6}
-              md={8}
-              xs={12}
-              className="my-5 "
-              style={{ fontSize: "18px",fontWeight:'500' }}
-            >
-              <b>AGUA ONE</b>, our IoT gateway is enabling sustainable water
-              management across the water value chain. This state-of-the-art
-              solution offers numerous benefits to our customers. Key features
-              which make our gateway stand out:
-              <Container>
-              <p className="pt-3 ms-2 "  style={{ fontSize: "16px" }} >
-                * Seamless communication over advanced wireless protocols, like
-                LoRa, 4G, GSM, WiFi and Bluetooth.
-              </p>
-              <p className="pt-1 ms-2 "  style={{ fontSize: "16px" }}>
-                * Power options like AC power, solar power and battery backup,
-                ensure uninterrupted operation.
-              </p>
-              <p className="pt-1 ms-2" style={{ fontSize: "16px" }}>
-                * 24/7 monitoring, Geotagging, Alert system and accurate data
-                analytics, help you make data-driven decisions
-              </p>
-              </Container>
-
-            <p  style={{ fontSize: "16px" }}> With our reliable and accurate solutions, you can rest assured
-              that you are choosing a solution that makes your facility
-              future-ready.</p> 
+              <p style={{ fontSize: "16px" }}> With our reliable and accurate solutions, you can rest assured
+                that you are choosing a solution that makes your facility
+                future-ready.</p>
             </Col>
-           
-            <Col lg={6} md={4} xs={12} className="my-4">
-              <a href="" alt="">
-                <img
-                  src={Mid1}
-                  className="img-fluid "
-                  style={{ width: "393px", height: "438px" }}
-                />
-              </a>
+
+            <Col lg={6} md={4} xs={12} className="text-center">
+              <img
+                src={Mid1}
+                className="img-fluid w-auto"
+              />
             </Col>
           </Row>
-          <Row className=" pt-5 pb-5 align-items-center ">
+
+          <Row className=" pt-5 pb-5 align-items-center text-center ">
             <Col lg={3} md={3} xs={3}>
               <img
                 src={Im1}
-                className="img-fluid"
-                style={{ width: "180px", height: "80px" }}
+                className="img-fluid techImg"
               />
             </Col>
             <Col lg={3} md={3} xs={3}>
               <img
                 src={Im2}
-                className="img-fluid"
-                style={{ width: "106px", height: "116px" }}
+                className="img-fluid techImg"
               />
             </Col>
             <Col lg={3} md={3} xs={3}>
               <img
                 src={Im3}
-                className="img-fluid"
-                style={{ width: "118px", height: "118px" }}
+                className="img-fluid techImg"
               />
             </Col>
             <Col lg={3} md={3} xs={3}>
               <img
                 src={Im4}
-                className="img-fluid"
-                style={{ width: "179px", height: "79px" }}
+                className="img-fluid techImg"
+
               />
             </Col>
           </Row>
         </Container>
       </Container>
-          <MDBCarousel  fade>
-      <MDBCarouselItem
-   
-        style={{
-          width: "100%",
-          height: "350px",
-        }}
-        itemId={1}
-        className="img-fluid"
-       src='https://static.wixstatic.com/media/dc1522_77acc46c588e4dc4944bbc690c527a15~mv2.png/v1/fill/w_1003,h_306,al_c,lg_1,q_85,enc_auto/dc1522_77acc46c588e4dc4944bbc690c527a15~mv2.png' 
-        alt='...'
-      >
-        
-        <h1 className="text-center pb-4 " >
-          
-          <b style={{fontWeight:"600"}}>Take your first step towards sustainable water future</b>
-        </h1>
-        <div className="d-grid gap-2 d-md-flex justify-content-center pb-5">
-              <Button
-                variant="light"
-                className="me-md-2 mb-2 fs-5 "
-                style={{ width: "200px"}}
-                href="https://calendly.com/partnerships-agua/30min"
-              >
-                <b className="button">Book a Demo</b>
-              </Button>
-              <Button
-                variant="light"
-                className="ms-md-2 mb-2 fs-5 "
-                style={{ width: "200px" }}
-                href="https://www.aguaws.com/product-catalogue"
-                
-              >
-                <b className=" button">Product Catalog</b>
-              </Button>
-            </div>
-         
-      </MDBCarouselItem>
 
-      <MDBCarouselItem
-       className="img-fluid carousel"        style={{
-          width: "100%",
-          height: "350px",
-        }}
-        itemId={2}
-        src='https://static.wixstatic.com/media/dc1522_f1437bd23d914bf0876596e33a5d0f76~mv2.png/v1/fill/w_1003,h_306,al_c,lg_1,q_85,enc_auto/dc1522_f1437bd23d914bf0876596e33a5d0f76~mv2.png'
-        alt='...'
-      >
-         <h1 className="text-center pb-4">
-          
-          <b style={{fontWeight:"600"}}>Take your first step towards sustainable water future</b>
-        </h1>
-        <div className="d-grid gap-2 d-md-flex justify-content-center pb-5">
-              <Button
-                variant="light"
-                className="me-md-2 mb-2 fs-5 button"
-                style={{ width: "200px" }}
-                href="https://calendly.com/partnerships-agua/30min"
-              >
-                <b>Book a Demo</b>
-              </Button>
-              <Button
-                variant="light"
-                className="ms-md-2 mb-2 fs-5  button"
-                style={{ width: "200px" }}
-                href="https://www.aguaws.com/product-catalogue"
-              >
-                <b>Product Catalog</b>
-              </Button>
-            </div>
-       
-      </MDBCarouselItem>
 
-      <MDBCarouselItem
-        className="img-fluid carousel"    
-          style={{
-           width: "100%",
-           height: "350px",
-         }}
-        itemId={3}
-        src='https://static.wixstatic.com/media/dc1522_649cae8446624806b7a7a1155eaf3311~mv2.png/v1/fill/w_1003,h_306,al_c,lg_1,q_85,enc_auto/dc1522_649cae8446624806b7a7a1155eaf3311~mv2.png'
-        alt='...'
-      >
-        <h1 className="text-center pb-4">
-          
-          <b style={{fontWeight:"600"}}>Take your first step towards sustainable water future</b>
-        </h1>
-        <div className="d-grid gap-2 d-md-flex justify-content-center pb-5">
-              <Button
-                variant="light"
-                className="me-md-2 mb-2 fs-5 button"
-                style={{ width: "200px" }}
-                href="https://calendly.com/partnerships-agua/30min"
-              >
-                <b>Book a Demo</b>
-              </Button>
-              <Button
-                variant="light"
-                className="ms-md-2 mb-2 fs-5  button"
-                style={{ width: "200px" }}
-                href="https://www.aguaws.com/product-catalogue"
-              >
-                <b>Product Catalog</b>
-              </Button>
+      <div className="container-fluid px-0 mx-0 position-relative w-100 overflow-hidden bg-black user-select-none">
+
+        <div className="position-absolute  z-3 top-0 bottom-0 w-100 d-flex flex-column justify-content-center align-items-center">
+          <h1 className="text-white text-center ">Take your first step towards sustainable water future</h1>
+          <div className="d-grid gap-3 d-md-flex justify-content-md-end">
+            <button className="btn btn-primary">Book a demo</button>
+            <button className="btn btn-primary">Product Catalog</button>
+          </div>
+        </div>
+
+        <Slider {...settings}>
+          {bookDemoSlider.map((item, key) =>
+            <div key={key}>
+              <img src={item} style={{ width: "100%", objectFit: 'cover', height: '400px' }} />
             </div>
-      </MDBCarouselItem>
-      <MDBCarouselItem
-       className="img-fluid carousel "        style={{
-          width: "100%",
-          height: "350px",
-        }}
-        itemId={4}
-        src='https://static.wixstatic.com/media/dc1522_a8f2b375cbff4405b82a3ae72231e296~mv2.png/v1/fill/w_1003,h_306,al_c,lg_1,q_85,enc_auto/dc1522_a8f2b375cbff4405b82a3ae72231e296~mv2.png'
-        alt='...'
-      >
-        <h1 className="text-center pb-4">
-          
-          <b style={{fontWeight:"600"}}>Take your first step towards sustainable water future</b>
-        </h1>
-        <div className="d-grid gap-2 d-md-flex justify-content-center pb-5">
-              <Button
-                variant="light"
-                className="me-md-2 mb-2 fs-5 button"
-                style={{ width: "200px" }}
-                href="https://calendly.com/partnerships-agua/30min"
-              >
-                <b>Book a Demo</b>
-              </Button>
-              <Button
-                variant="light"
-                className="ms-md-2 mb-2 fs-5  button"
-                style={{ width: "200px" }}
-                href="https://www.aguaws.com/product-catalogue"
-              >
-                <b>Product Catalog</b>
-              </Button>
-            </div>
-      </MDBCarouselItem>
-      <MDBCarouselItem
-        className="img-fluid carousel"         
-        style={{
-           width: "100%",
-           height: "350px",
-           
-         }}
-        itemId={5}
-        src='https://static.wixstatic.com/media/dc1522_ba7cfbe0edf34fe9adc25bb1c56a29de~mv2.png/v1/fill/w_1003,h_306,al_c,lg_1,q_85,enc_auto/dc1522_ba7cfbe0edf34fe9adc25bb1c56a29de~mv2.png'
-        alt='...'
-      >
-        <h1 className="text-center pb-4">
-          
-          <b style={{fontWeight:"600"}}>Take your first step towards sustainable water future</b>
-        </h1>
-        <div className="d-grid gap-2 d-md-flex justify-content-center pb-5">
-              <Button
-                variant="light"
-                className="me-md-2 mb-2 fs-5 button"
-                style={{ width: "200px" }}
-                href="https://calendly.com/partnerships-agua/30min"
-              >
-                <b>Book a Demo</b>
-              </Button>
-              <Button
-                variant="light"
-                className="ms-md-2 mb-2 fs-5  button"
-                style={{ width: "200px" }}
-                href="https://www.aguaws.com/product-catalogue"
-              >
-                <b>Product Catalog</b>
-              </Button>
-            </div>
-      </MDBCarouselItem>
-    </MDBCarousel>     
-    <Container fluid className=" pt-5 pb-5 bg-black text-white">
+          )}
+        </Slider>
+      </div>
+
+      <Container fluid className=" pt-5 pb-5 bg-black text-white">
         <Container>
           <Row >
             <Col lg={5} md={7} xs={12}>
               <h6>
                 <b>Address :</b>
               </h6>
-              <p style={{fontSize:'15px'}}>
+              <p style={{ fontSize: '15px' }}>
                 No. 465, Beri Div Dighal, Madana, Jhajjar, Haryana, India -
                 124102
               </p>
@@ -693,60 +390,55 @@ export const Home = () => {
             <Col lg={3} md={5} xs={6}>
               <div >
 
-              <h6>
-                <b>Follow us on:</b>
-              </h6>
-              <a href="/" className="fa fa-twitter-square fs-2 ms-2 text-white text-decoration-none "></a>
+                <h6>
+                  <b>Follow us on:</b>
+                </h6>
+                <a href="/" className="fa fa-twitter-square fs-2 ms-2 text-white text-decoration-none "></a>
 
-<a href="/" className="fa fa-facebook-square fs-2  ms-2 text-white  text-decoration-none"> </a>
+                <a href="/" className="fa fa-facebook-square fs-2  ms-2 text-white  text-decoration-none"> </a>
 
-<a  href="/" className="fa fa-instagram fs-2  ms-2 text-white  text-decoration-none "></a>
+                <a href="/" className="fa fa-instagram fs-2  ms-2 text-white  text-decoration-none "></a>
 
-<a  href="/" className="fa fa-linkedin-square fs-2 ms-2 text-white  text-decoration-none "></a>
+                <a href="/" className="fa fa-linkedin-square fs-2 ms-2 text-white  text-decoration-none "></a>
               </div>
-                <div className="pt-4  ">
-              <h6 className="padding" > <b>Drop Us a Mail :</b></h6>
-              <a href="https://www.google.com/gmail/about/" className="fa fa-envelope fs-2 ms-2 text-white" ></a>
+              <div className="pt-4  ">
+                <h6 className="padding" > <b>Drop Us a Mail :</b></h6>
+                <a href="https://www.google.com/gmail/about/" className="fa fa-envelope fs-2 ms-2 text-white" ></a>
               </div>
-           
+
             </Col>
 
-            <Col lg={4} md={5} xs={12 }>
-              <h6 style={{fontWeight:'600'}}>
-              Join our newsletter
+            <Col lg={4} md={5} xs={12}>
+              <h6 style={{ fontWeight: '600' }}>
+                Join our newsletter
               </h6>
-              <ButtonToolbar  aria-label="Toolbar with Button groups" >
-       
-       <InputGroup className="rounded-3">
-         <input id="btnGroupAddon"  style={{width:'170px',color:'blue',outlineColor:'red',backgroundColor:'#E5EBFA'}} />
-         <Form.Control
-    
-         placeholder="subscribe"
-         aria-required="true"
-          style={{cursor:'pointer',outlineColor:'red'}}
-        
-         />
-       </InputGroup>
-     </ButtonToolbar>
-           
-             
+              <ButtonToolbar aria-label="Toolbar with Button groups" >
+
+                <InputGroup className="rounded-3">
+                  <input id="btnGroupAddon" style={{ width: '170px', color: 'blue', outlineColor: 'red', backgroundColor: '#E5EBFA' }} />
+                  <Form.Control
+
+                    placeholder="subscribe"
+                    aria-required="true"
+                    style={{ cursor: 'pointer', outlineColor: 'red' }}
+
+                  />
+                </InputGroup>
+              </ButtonToolbar>
             </Col>
-          
-            </Row>
-            
+          </Row>
+
         </Container>
       </Container>
       <hr className="m-0 " />
-      <Container fluid className="pt-4 pb-5 bg-black">
-         <Container>
-        
-        <p style={{fontSize:"16px"}} className="text-white" >
-            © 2023 Agua Wireless Systems Private Limited. All Rights Reserved. Various Trademarks Held By Their Respective Owners.</p>
+      <Container fluid className="py-4 bg-black">
+        <Container style={{ fontSize: "16px" }} className="text-white">
+          © 2023 Agua Wireless Systems Private Limited. All Rights Reserved. Various Trademarks Held By Their Respective Owners.
         </Container>
       </Container>
 
-      
-      
+
+
     </>
   );
 };

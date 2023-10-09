@@ -1,20 +1,20 @@
-@media(max-width:1024px){
-.videos{
-    max-height: 300px !important;
-    max-width: 400px !important;
+@media(max-width:1024px) {
+    .videos {
+        max-height: 300px !important;
+        max-width: 400px !important;
+    }
 }
-}
-  
 
-@media (max-width:1024px){
+
+/* @media (max-width:1024px){
     .image1{
         max-width: 350px !important;
         max-height: 300px !important;
     }
-}
-@media(max-width:576px){
-    .cards{
-        max-width: 500px!important;
+} */
+@media(max-width:576px) {
+    .cards {
+        max-width: 500px !important;
         max-height: 450px !important;
     }
 }
@@ -27,21 +27,47 @@
 .card-hover:hover {
     cursor: pointer;
     transform: scale(1.3);
-    transition: transform 0.4s; 
+    transition: transform 0.4s;
 }
 
 
 
- 
-.carousel .slide {
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out; 
-  }
-  
-  
-  .carousel .slide.selected {
-    opacity: 1;
-  }
 
- 
- 
+.slider {
+    transition: transform 0.2s ease-in-out;
+}
+
+.slider:hover {
+    transform: scale(1.05);
+}
+
+.carousel .slide.selected {
+    opacity: 1;
+}
+
+
+.equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.equal-height .col {
+    display: flex;
+    flex-direction: column;
+}
+
+.equal-height img {
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+}
+
+.smarterImg {
+    height: 200px;
+    object-fit: contain;
+}
+
+.techImg {
+    height: 120px !important;
+    object-fit: contain;
+}
