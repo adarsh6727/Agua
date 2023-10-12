@@ -6,12 +6,6 @@
 }
 
 
-/* @media (max-width:1024px){
-    .image1{
-        max-width: 350px !important;
-        max-height: 300px !important;
-    }
-} */
 @media(max-width:576px) {
     .cards {
         max-width: 500px !important;
@@ -34,7 +28,7 @@
 
 
 .slider {
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .slider:hover {
@@ -68,6 +62,36 @@
 }
 
 .techImg {
-    height: 120px !important;
+    height: 100px !important;
     object-fit: contain;
 }
+
+@media(max-width:576px) {
+    .Img {
+        width: 80px !important;
+        height: 50px !important;
+
+    }
+}
+
+.button:hover {
+
+    background-color: #096d27 !important;
+    color: white;
+}
+
+
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Add this CSS to your stylesheet or in a style tag in your component */
+
+
+  

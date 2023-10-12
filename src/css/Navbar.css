@@ -1,3 +1,10 @@
-.navbar-custom .nav-link:hover {
-    color:#6FCCDD!important;
+.buttons:hover{
+    color: #6FCCDD !important;
 }
+.hover-dropdown .dropdown-toggle {
+    cursor: pointer !important;
+  }
+  
+  .hover-dropdown:hover .dropdown-menu {
+    display: block !important;
+  }

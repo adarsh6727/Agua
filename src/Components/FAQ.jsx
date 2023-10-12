@@ -1,34 +1,34 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Accordion from "react-bootstrap/Accordion";
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+import FooterComponent from "../Shared/FooterComponent";
+import Fade from "react-reveal/Fade"
 export const FAQ = () => {
   return (
     <>
+    <Fade In>
       <Container fluid className="text-white bg-black pt-5 pb-5">
         <Container>
         <h1 style={{ fontSize: "80px" }}>
           <b>FAQ</b>
         </h1>
-        <p>
-          {" "}
+        <p style={{fontSize:"22px"}}  >
           <b>Frequently Asked Questions</b>
         </p>
         </Container>
       </Container>
-      <Container fluid className="bg-white text-black pt-5 pb-5 my-5">
+      </Fade>
+      <Container fluid className="bg-white text-black pt-4 pb-4 my-5 " >
         <Container>
          
+        
           <Accordion defaultActiveKey="0"  style={{ fontSize: "13px" }}>
             <Accordion.Item eventKey="0">
             <Accordion.Header>
-              <b>Why should I choose Agua ?</b>
+              <b >Why should I choose Agua ?</b>
             </Accordion.Header>
             <Accordion.Body>
+            <div style={{fontSize:'15px'}}>
               There are many benefits to choosing Agua for your water management
               needs. Our subscription model allows you to pay for only the
               services that you need, significantly lowering your cost. We also
@@ -38,7 +38,7 @@ export const FAQ = () => {
               that you can start using the device the same day as it is
               delivered to you. Additionally, our devices come with a lifetime
               warranty, which gives you peace of mind and confidence in your
-              purchase.
+              purchase.</div>
             </Accordion.Body>
             </Accordion.Item>
       <Accordion.Item eventKey="1">
@@ -49,7 +49,9 @@ export const FAQ = () => {
               </b>
             </Accordion.Header>
             <Accordion.Body>
-              IoT technology is like the cool, hip teenager of the tech world,
+              <div style={{fontSize:'15px'}}
+             >
+               IoT technology is like the cool, hip teenager of the tech world,
               while SCADA and PLC are like the reliable, dependable adults. IoT
               can connect to all your smart devices, and give you real-time
               insights and control from anywhere, while SCADA and PLC are more
@@ -58,7 +60,7 @@ export const FAQ = () => {
               you, while SCADA and PLC are more like having a trusty tool belt
               for specific jobs. In short, IoT is like having a smartphone and
               SCADA/PLC is like having a landline. Both get the job done, but
-              one is more versatile and convenient.
+              one is more versatile and convenient.</div>
             </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="2">
@@ -66,11 +68,14 @@ export const FAQ = () => {
                 <b>Do your systems need a power supply?</b>
               </Accordion.Header>
               <Accordion.Body>
-                <p>Our IoT device can be powered through different power supply sources. These include: </p>
-                <p>1. AC power supply - This is a reliable and consistent power source that can be used to power the device. However, it requires access to an electrical outlet, which may not always be available</p>
-                <p>2. Solar power - This is a great option for remote or off-grid locations where access to electricity is limited. The device can be powered using solar panels, which can be installed on the site to capture sunlight and convert it into electricity.</p>
-                <p>3. Battery - This is a portable and flexible power source that can be used for temporary installations or where power outages are common. The battery can be charged using AC power or solar power, and it can keep the device running even when there is no access to power.</p>
-                <p>The choice of power supply source will depend on the client's budget, device communication frequency, power consumption (For example, automation of a water pump requires an AC power source), site conditions, and other factors. We work with our clients to determine the best power supply option for their specific needs. </p>
+              <div style={{fontSize:'15px'}}>
+                <ol className="d-grid gap-3">
+               Our IoT device can be powered through different power supply sources. These include: 
+           <li>   AC power supply - This is a reliable and consistent power source that can be used to power the device. However, it requires access to an electrical outlet, which may not always be available</li>
+            <li>   Solar power - This is a great option for remote or off-grid locations where access to electricity is limited. The device can be powered using solar panels, which can be installed on the site to capture sunlight and convert it into electricity.</li> 
+             <li>  Battery - This is a portable and flexible power source that can be used for temporary installations or where power outages are common. The battery can be charged using AC power or solar power, and it can keep the device running even when there is no access to power.</li>
+               The choice of power supply source will depend on the client's budget, device communication frequency, power consumption (For example, automation of a water pump requires an AC power source), site conditions, and other factors. We work with our clients to determine the best power supply option for their specific needs. </ol>
+               </div>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey={3}>
@@ -78,8 +83,9 @@ export const FAQ = () => {
                 <b>Can you help connect my existing sensors to the internet?</b>
               </Accordion.Header>
               <Accordion.Body>
-                <p>Yes, we can connect your existing sensors to the internet, and showcase all data generated by them through web and mobile apps. Our IoT controller can interface with a wide range of sensors, including those that use analog, digital, or serial communication protocols. We have the capability to receive communication data from your sensors using different communication protocols such as RS 485, UART, 4-20mA, RS232, I2C, and others.</p>
-                <p>By upgrading your sensors with the latest communication technologies, you will be able to access the sensor data remotely through mobile apps, analyze historical sensor values, take real-time operational decisions based on sensor conditions, get alerts based on pre-set conditions, as well as view all your assets on a map view.</p>
+              <div style={{fontSize:'15px'}}  className="d-grid gap-3">
+                <li>Yes, we can connect your existing sensors to the internet, and showcase all data generated by them through web and mobile apps. Our IoT controller can interface with a wide range of sensors, including those that use analog, digital, or serial communication protocols. We have the capability to receive communication data from your sensors using different communication protocols such as RS 485, UART, 4-20mA, RS232, I2C, and others.</li>
+                <li>By upgrading your sensors with the latest communication technologies, you will be able to access the sensor data remotely through mobile apps, analyze historical sensor values, take real-time operational decisions based on sensor conditions, get alerts based on pre-set conditions, as well as view all your assets on a map view.</li></div>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="4">
@@ -87,9 +93,11 @@ export const FAQ = () => {
                 <b>What type of information will I be able to access on the mobile app?</b>
               </Accordion.Header>
               <Accordion.Body>
-                <p>The application will track the desired water-related KPIs for your facility, including storage levels, water quality levels, leaks detected, service requests etc., analyse historic consumption, and help understand usage patterns. We also help you better visualize your infrastructure by geotagging all assets on a map, as well as on the project layout.</p>
-                <p>The system will generate alerts in case of problems in your water grid, including, detection of contaminants, leakages, and malfunctioning equipment. This allows users to stay informed and take proactive measures to address any issues with their water supply. Custom alerts and information can also be integrated as per the client requirement.</p>
-                <p>All the information generated can be restricted and customized for different hierarchical access levels within your organization. We can also create custom dashboards to cater to your specific needs.</p>
+              <div style={{fontSize:'15px'}}  className="d-grid gap-3">
+                <li>The application will track the desired water-related KPIs for your facility, including storage levels, water quality levels, leaks detected, service requests etc., analyse historic consumption, and help understand usage patterns. We also help you better visualize your infrastructure by geotagging all assets on a map, as well as on the project layout.</li>
+                <li>The system will generate alerts in case of problems in your water grid, including, detection of contaminants, leakages, and malfunctioning equipment. This allows users to stay informed and take proactive measures to address any issues with their water supply. Custom alerts and information can also be integrated as per the client requirement.</li>
+                <li>All the information generated can be restricted and customized for different hierarchical access levels within your organization. We can also create custom dashboards to cater to your specific needs.</li>
+                </div>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="5">
@@ -97,9 +105,10 @@ export const FAQ = () => {
                 <b>Are your devices waterproof?</b>
               </Accordion.Header>
               <Accordion.Body>
-                <p>We know that water distribution systems will be exposed to tough environmental conditions. That's why we've designed our sensors to be water resistant, so you can be confident they'll perform even in challenging circumstances.</p>
-                <p>We offer sensors with different ratings of water resistance, from IP65 to IP68. IP65 rated sensors can handle low pressure water jets from any direction; while IP68 rated sensors can even withstand long periods of immersion under pressure. We work with you to determine the best level of water resistance for your specific application, taking into account factors such as where the sensors will be located, the weather conditions they'll face, and the type of sensor being used.</p>
-                <p>Our devices can withstand harsh environmental conditions like water ingress, dust ingress, high temperatures, altitude, and more. You can trust that they'll provide reliable and accurate data about your water distribution system, no matter what challenges come their way.</p>
+              <div style={{fontSize:'15px'}}  className="d-grid gap-3">
+                <li>We know that water distribution systems will be exposed to tough environmental conditions. That's why we've designed our sensors to be water resistant, so you can be confident they'll perform even in challenging circumstances.</li>
+                <li>We offer sensors with different ratings of water resistance, from IP65 to IP68. IP65 rated sensors can handle low pressure water jets from any direction; while IP68 rated sensors can even withstand long periods of immersion under pressure. We work with you to determine the best level of water resistance for your specific application, taking into account factors such as where the sensors will be located, the weather conditions they'll face, and the type of sensor being used.</li>
+                <li>Our devices can withstand harsh environmental conditions like water ingress, dust ingress, high temperatures, altitude, and more. You can trust that they'll provide reliable and accurate data about your water distribution system, no matter what challenges come their way.</li></div>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="6">
@@ -107,7 +116,8 @@ export const FAQ = () => {
                 <b>What is the warranty period of your products?</b>
               </Accordion.Header>
               <Accordion.Body>
-              Our products come with a lifetime warranty when purchased through the subscription model, meaning we will repair or replace any defective products free of charge, as long as they're used as intended. This warranty is a testament of our confidence in the quality and durability of our solutions. The standard warranty under the purchase model is one year, but additional coverage can be added at any time. Please note that the warranty does not cover damages from improper use, modifications, or normal wear and tear. 
+              <div style={{fontSize:'15px'}}>
+              Our products come with a lifetime warranty when purchased through the subscription model, meaning we will repair or replace any defective products free of charge, as long as they're used as intended. This warranty is a testament of our confidence in the quality and durability of our solutions. The standard warranty under the purchase model is one year, but additional coverage can be added at any time. Please note that the warranty does not cover damages from improper use, modifications, or normal wear and tear. </div>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="7">
@@ -115,7 +125,8 @@ export const FAQ = () => {
                 <b> What technical support would be provided by you after the deployment?</b>
               </Accordion.Header>
               <Accordion.Body>
-              Our purchase model provides a one year warranty, post which additional warranty can be purchased. Our subscription model on the other hand provides lifetime warranty. During this period, you can expect us to provide technical support, software updates, and any other assistance you may need to ensure that your device is functioning properly. We understand the importance of your investment and will ensure that it continues to meet your needs.
+              <div style={{fontSize:'15px'}}>
+              Our purchase model provides a one year warranty, post which additional warranty can be purchased. Our subscription model on the other hand provides lifetime warranty. During this period, you can expect us to provide technical support, software updates, and any other assistance you may need to ensure that your device is functioning properly. We understand the importance of your investment and will ensure that it continues to meet your needs.  </div>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="=8">
@@ -123,8 +134,9 @@ export const FAQ = () => {
                 <b>How do you ensure privacy and security of the data generated by IoT devices?</b>
               </Accordion.Header>
               <Accordion.Body>
-                <p>We take the protection and privacy of your data very seriously. We have implemented robust security measures to ensure that your data is always protected and kept private. We use industry-standard encryption to secure data transmission and storage and we regularly update our security protocols to stay ahead of potential threats. By implementing proprietary encryption algorithms, apart from industry standard protocols, we have ensured that your devices are hack proof, and your data is safe.</p>
-                <p>We also have strict data access controls in place to ensure that only authorised personnel have access to your data. Our team is trained on the importance of data privacy and they follow strict guidelines to ensure that your data is always handled in a secure and confidential manner. </p>
+              <div style={{fontSize:'15px'}}  className="d-grid gap-3">
+                <li>We take the protection and privacy of your data very seriously. We have implemented robust security measures to ensure that your data is always protected and kept private. We use industry-standard encryption to secure data transmission and storage and we regularly update our security protocols to stay ahead of potential threats. By implementing proprietary encryption algorithms, apart from industry standard protocols, we have ensured that your devices are hack proof, and your data is safe.</li>
+                <li>We also have strict data access controls in place to ensure that only authorised personnel have access to your data. Our team is trained on the importance of data privacy and they follow strict guidelines to ensure that your data is always handled in a secure and confidential manner. </li></div>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="9">
@@ -132,7 +144,8 @@ export const FAQ = () => {
                 <b>How can I change the device settings without reaching out to you?</b>
               </Accordion.Header>
               <Accordion.Body>
-              Changing the device configuration is easy! You can do it through the settings on our mobile and web app. The app is user-friendly and easy to navigate, making it simple to make any necessary adjustments to the device, through the settings menu. You can change water alert levels, beyond which a water pump switch will be triggered, water quality levels beyond which alerts will be generated, water consumption beyond which supply will be shut, and much more. If you ever have any questions or concerns about the configuration process, our customer support team is available to assist you. 
+              <div style={{fontSize:'15px'}}>
+              Changing the device configuration is easy! You can do it through the settings on our mobile and web app. The app is user-friendly and easy to navigate, making it simple to make any necessary adjustments to the device, through the settings menu. You can change water alert levels, beyond which a water pump switch will be triggered, water quality levels beyond which alerts will be generated, water consumption beyond which supply will be shut, and much more. If you ever have any questions or concerns about the configuration process, our customer support team is available to assist you.</div> 
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="10">
@@ -140,67 +153,46 @@ export const FAQ = () => {
                 <b>Can you make custom solutions or features for me?</b>
               </Accordion.Header>
               <Accordion.Body>
-                <p>Absolutely! Customization is one of our areas of expertise.</p>
-                <p>We understand that the water infrastructure of every client is unique. With our extensive knowledge of the water industry, we help create customised IoT-enabled solutions that meet your specific needs. Whether you're looking for a unique device or a custom feature for an existing device, or even a custom dashboard that works best for your company, our team can help you. Please reach out to our sales team for more details. </p>
+              <div style={{fontSize:'15px'}}  className="d-grid gap-3">
+                <li>Absolutely! Customization is one of our areas of expertise.</li>
+                <li>We understand that the water infrastructure of every client is unique. With our extensive knowledge of the water industry, we help create customised IoT-enabled solutions that meet your specific needs. Whether you're looking for a unique device or a custom feature for an existing device, or even a custom dashboard that works best for your company, our team can help you. Please reach out to our sales team for more details. </li>
+                </div>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="11">
+              <Accordion.Header>
+                <b>Can you do white label your products for my brand?</b>
+              </Accordion.Header>
+              <Accordion.Body>
+              <div style={{fontSize:'15px'}}>
+              I'm sorry, but as a company policy, we don't provide white labeling services. We take pride in our brand and the impact that we are creating. It is important for us to maintain our brand integrity, to help scale this impact faster. We are, however, open to discuss other forms of customization that would suit your requirements. A new product development done specifically for you can have your branding as well. Please reach out to us for more details </div>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="12">
+                <Accordion.Header>
+             <b> Are you a water treatment company?</b>   
+                </Accordion.Header>
+                <Accordion.Body>
+                Ha! No, I'm not a water treatment company, but I do know a thing or two about it. I'm more like the "water-quality-manager-in-your-pocket" kind of company. I can provide you with all the information you need to make sure your water is clean and safe. I can even notify you if the water quality in your facility deviates from prescribed norms. But I'm afraid you'll have to look elsewhere for the actual treatment. Think of me as the "Sherlock Holmes" of water treatment, I can help you find the problem but I leave the treatment to the "Dr. Watson" of water treatment companies.
+                </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item>
+              <Accordion.Header>
+            <b>  How do I become a dealer for your products?</b>
+              </Accordion.Header>
+              <Accordion.Body>
+              <div style={{fontSize:'15px'}}>
+              We are always on the lookout for promising dealers, who align with our company vision. Please reach out to us if you think you can market our products. 
+</div>
+
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
+          
         </Container>
       </Container>
 
-      <Container fluid className=" pt-5 pb-4 bg-black text-white">
-        <Container>
-          <Row >
-            <Col lg={5} md={7} xs={12}>
-              <h6>
-                <b>Address :</b>
-              </h6>
-              <p style={{fontSize:'15px'}}>
-                No. 465, Beri Div Dighal, Madana, Jhajjar, Haryana, India -
-                124102
-              </p>
-              <h6 className=""> <b>Phone No. :</b></h6>
-              <p>​1800 3090 609</p>
-            </Col>
-            <Col lg={3} md={5} xs={6}>
-              <div >
-
-              <h6>
-                <b>Follow us on:</b>
-              </h6>
-              <a href="/" className="fa fa-twitter-square fs-2 ms-2 text-white"></a>
-
-<a href="/" className="fa fa-facebook-square fs-2  ms-2 text-white"> </a>
-
-<a  href="/" className="fa fa-instagram fs-2  ms-2 text-white "></a>
-
-<a  href="/" className="fa fa-linkedin-square fs-2 ms-2 text-white  "></a>
-              </div>
-                <div className="pt-4  ">
-              <h6 className="padding" > <b>Drop Us a Mail :</b></h6>
-              <a href="https://www.google.com/gmail/about/" className="fa fa-envelope fs-2 ms-2 text-white" ></a>
-              </div>
-           
-            </Col>
-
-            <Col lg={4} md={5} xs={12}>
-              <h6 style={{fontWeight:'600'}}>
-              Join our newsletter
-              </h6>
-             
-                <input placeholder="Subscribe" style={{color:'red',backgroundColor:'black'}}  />      
-            </Col>
-            </Row>
-        </Container>
-      </Container>
-      <hr className="m-0 " />
-      <Container fluid className="pt-4 pb-5 bg-black">
-         <Container>
-        
-        <p style={{fontSize:"16px"}} className="text-white" >
-            © 2023 Agua Wireless Systems Private Limited. All Rights Reserved. Various Trademarks Held By Their Respective Owners.</p>
-        </Container>
-      </Container>
+    <FooterComponent/>
     </>
   );
 };
